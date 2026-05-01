@@ -38,12 +38,7 @@
 
       <section class="container">
         <h2 class="section-title">Categorías destacadas</h2>
-        <div class="grid">
-          <article class="card"><div class="card-media">Hombre</div></article>
-          <article class="card"><div class="card-media">Mujer</div></article>
-          <article class="card"><div class="card-media">Nuevos</div></article>
-          <article class="card"><div class="card-media">Ofertas</div></article>
-        </div>
+        <div class="cat-grid" id="cat-grid"></div>
       </section>
 
       <section class="container">
@@ -88,5 +83,42 @@
     <script src="config.js?v=20260501-3"></script>
     <script src="data.js?v=20260501-3"></script>
     <script src="cart.js?v=20260501-3"></script>
+    <script>
+      (function () {
+        const categories = [
+          { label: "Hombre", filter: "gender=hombre" },
+          { label: "Mujer", filter: "gender=mujer" },
+          { label: "Unisex", filter: "gender=unisex" },
+          { label: "Nuevos", filter: "nuevo=true" }
+        ];
+
+        function findCover(filter) {
+          if (filter.startsWith("gender=")) {
+            const g = filter.split("=")[1];
+            return PRODUCTS.find(function (p) { return p.gender === g; });
+          }
+          if (filter === "nuevo=true") {
+            return PRODUCTS.find(function (p) { return p.condition === "Nuevo"; });
+          }
+          return PRODUCTS[0];
+        }
+
+        const grid = document.getElementById("cat-grid");
+        if (!grid) return;
+        grid.innerHTML = categories.map(function (cat) {
+          const cover = findCover(cat.filter);
+          const img = cover ? getImageUrl(cover.mainImage || (cover.images && cover.images[0])) : "";
+          const bg = img
+            ? `style="background-image: url('${img}');"`
+            : "";
+          return `
+            <a class="cat-card" href="tienda.html?${cat.filter}" ${bg}>
+              <span class="cat-card-overlay"></span>
+              <span class="cat-card-label">${cat.label}</span>
+            </a>
+          `;
+        }).join("");
+      })();
+    </script>
   </body>
 </html>

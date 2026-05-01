@@ -54,3 +54,20 @@ terraform.tfvars
 .terraform/
 
 .cursor/
+
+*.bak
+*.tmp
+*.temp
+*.orig
+
+mp-token*
+*-token.txt
+*-token.json
+**/private/
+**/secrets*/
+
+backend/dist/*
+backend/build/*
+
+.aws-sam/
+samconfig.toml

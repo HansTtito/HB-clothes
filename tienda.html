@@ -23,11 +23,19 @@
 
     <main class="container">
       <section>
-        <h1>Catálogo</h1>
-        <p class="lead">
-          Ropa de segunda y algunas prendas nuevas. Productos mock para conectar luego con inventario real.
+        <h1 id="catalog-title">Catálogo</h1>
+        <p class="lead" id="catalog-lead">
+          Ropa de segunda mano seleccionada y algunas prendas nuevas. Envíos solo en Santiago.
         </p>
+        <div class="filter-bar" id="filter-bar">
+          <a class="chip" href="tienda.html" data-filter="all">Todos</a>
+          <a class="chip" href="tienda.html?gender=hombre" data-filter="hombre">Hombre</a>
+          <a class="chip" href="tienda.html?gender=mujer" data-filter="mujer">Mujer</a>
+          <a class="chip" href="tienda.html?gender=unisex" data-filter="unisex">Unisex</a>
+          <a class="chip" href="tienda.html?nuevo=true" data-filter="nuevo">Nuevos</a>
+        </div>
         <div id="catalog-grid" class="grid space-top"></div>
+        <p id="catalog-empty" class="lead" style="display:none;">No hay productos en esta categoría aún. Vuelve pronto.</p>
       </section>
     </main>
 
@@ -47,23 +55,70 @@
     <script src="data.js?v=20260501-3"></script>
     <script src="cart.js?v=20260501-3"></script>
     <script>
-      const catalog = document.getElementById("catalog-grid");
-      catalog.innerHTML = PRODUCTS.map(productCard).join("");
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const gender = params.get("gender");
+        const nuevo = params.get("nuevo") === "true";
 
-      catalog.addEventListener("click", function (event) {
-        const target = event.target.closest("[data-add-id]");
-        if (!target) return;
-        const productId = Number(target.getAttribute("data-add-id"));
-        const product = PRODUCTS.find(function (p) { return p.id === productId; });
-        if (!product) return;
+        let filtered = PRODUCTS.slice();
+        let activeFilter = "all";
+        let title = "Catálogo";
+        let lead = "Ropa de segunda mano seleccionada y algunas prendas nuevas. Envíos solo en Santiago.";
 
-        if (Array.isArray(product.sizes) && product.sizes.length > 0) {
-          window.location.href = "producto.html?id=" + productId;
-          return;
+        if (gender === "hombre") {
+          filtered = filtered.filter(function (p) { return p.gender === "hombre"; });
+          activeFilter = "hombre";
+          title = "Hombre";
+          lead = "Prendas seleccionadas para hombre.";
+        } else if (gender === "mujer") {
+          filtered = filtered.filter(function (p) { return p.gender === "mujer"; });
+          activeFilter = "mujer";
+          title = "Mujer";
+          lead = "Prendas seleccionadas para mujer.";
+        } else if (gender === "unisex") {
+          filtered = filtered.filter(function (p) { return p.gender === "unisex"; });
+          activeFilter = "unisex";
+          title = "Unisex";
+          lead = "Prendas que combinan con todos.";
+        } else if (nuevo) {
+          filtered = filtered.filter(function (p) { return p.condition === "Nuevo"; });
+          activeFilter = "nuevo";
+          title = "Nuevos";
+          lead = "Prendas nuevas, sin uso previo.";
         }
 
-        addToCart(productId, null, 1);
-      });
+        document.getElementById("catalog-title").textContent = title;
+        document.getElementById("catalog-lead").textContent = lead;
+
+        const chips = document.querySelectorAll("#filter-bar .chip");
+        chips.forEach(function (c) {
+          if (c.getAttribute("data-filter") === activeFilter) c.classList.add("active");
+        });
+
+        const catalog = document.getElementById("catalog-grid");
+        const empty = document.getElementById("catalog-empty");
+        if (filtered.length === 0) {
+          catalog.style.display = "none";
+          empty.style.display = "block";
+        } else {
+          catalog.innerHTML = filtered.map(productCard).join("");
+        }
+
+        catalog.addEventListener("click", function (event) {
+          const target = event.target.closest("[data-add-id]");
+          if (!target) return;
+          const productId = Number(target.getAttribute("data-add-id"));
+          const product = PRODUCTS.find(function (p) { return p.id === productId; });
+          if (!product) return;
+
+          if (Array.isArray(product.sizes) && product.sizes.length > 0) {
+            window.location.href = "producto.html?id=" + productId;
+            return;
+          }
+
+          addToCart(productId, null, 1);
+        });
+      })();
     </script>
   </body>
 </html>
