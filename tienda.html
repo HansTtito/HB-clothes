@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HB clothes | Tienda</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="notice-bar">Envíos solo Santiago | Sin cambios | Segunda mano seleccionada + prendas nuevas</div>
+    <header class="navbar">
+      <div class="container nav-inner">
+        <a class="logo" href="index.html">HB clothes | Lo mejor de USA, listo para usar</a>
+        <nav class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a class="active" href="tienda.html">Tienda</a>
+          <a href="carrito.html">Carrito <span data-cart-count></span></a>
+          <a href="checkout.html">Checkout</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section>
+        <h1>Catálogo</h1>
+        <p class="lead">
+          Ropa de segunda y algunas prendas nuevas. Productos mock para conectar luego con inventario real.
+        </p>
+        <div id="catalog-grid" class="grid space-top"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-main">
+        <p>HB clothes - envíos solo en Santiago, sin cambios.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">Instagram (próximamente)</a>
+          <a href="#" aria-label="TikTok">TikTok (próximamente)</a>
+          <a href="#" aria-label="Facebook">Facebook (próximamente)</a>
+        </div>
+      </div>
+    </footer>
+    <a class="whatsapp-float" href="https://wa.me/56969004163" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+
+    <script src="config.js?v=20260501-3"></script>
+    <script src="data.js?v=20260501-3"></script>
+    <script src="cart.js?v=20260501-3"></script>
+    <script>
+      const catalog = document.getElementById("catalog-grid");
+      catalog.innerHTML = PRODUCTS.map(productCard).join("");
+
+      catalog.addEventListener("click", function (event) {
+        const target = event.target.closest("[data-add-id]");
+        if (!target) return;
+        const productId = Number(target.getAttribute("data-add-id"));
+        const product = PRODUCTS.find(function (p) { return p.id === productId; });
+        if (!product) return;
+
+        if (Array.isArray(product.sizes) && product.sizes.length > 0) {
+          window.location.href = "producto.html?id=" + productId;
+          return;
+        }
+
+        addToCart(productId, null, 1);
+      });
+    </script>
+  </body>
+</html>

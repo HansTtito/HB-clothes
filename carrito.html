@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HB clothes | Carrito</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="notice-bar">Envíos solo Santiago | Sin cambios | Segunda mano seleccionada + prendas nuevas</div>
+    <header class="navbar">
+      <div class="container nav-inner">
+        <a class="logo" href="index.html">HB clothes | Lo mejor de USA, listo para usar</a>
+        <nav class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="tienda.html">Tienda</a>
+          <a class="active" href="carrito.html">Carrito <span data-cart-count></span></a>
+          <a href="checkout.html">Checkout</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section>
+        <h1>Carrito</h1>
+        <p class="lead">Revisa tus productos antes de continuar al pago.</p>
+      </section>
+
+      <section id="cart-empty" class="panel" style="display: none;">
+        <p>Tu carrito está vacío.</p>
+        <a class="btn btn-primary space-top" href="tienda.html">Ir a la tienda</a>
+      </section>
+
+      <section id="cart-content" class="grid" style="grid-template-columns: 2fr 1fr;">
+        <div class="panel">
+          <h2>Productos</h2>
+          <div id="cart-items" class="space-top"></div>
+        </div>
+
+        <aside class="panel">
+          <h2>Resumen</h2>
+          <p class="space-top">Subtotal: <strong id="cart-subtotal">$0</strong></p>
+          <p>Envío: <strong id="cart-shipping">$0</strong></p>
+          <p>Total: <strong id="cart-total">$0</strong></p>
+          <a class="btn btn-primary space-top" href="checkout.html">Continuar al checkout</a>
+          <button id="cart-clear" type="button" class="btn btn-secondary space-top">Vaciar carrito</button>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-main">
+        <p>HB clothes - envíos solo en Santiago, sin cambios.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">Instagram (próximamente)</a>
+          <a href="#" aria-label="TikTok">TikTok (próximamente)</a>
+          <a href="#" aria-label="Facebook">Facebook (próximamente)</a>
+        </div>
+      </div>
+    </footer>
+    <a class="whatsapp-float" href="https://wa.me/56969004163" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+
+    <script src="config.js?v=20260501-3"></script>
+    <script src="data.js?v=20260501-3"></script>
+    <script src="cart.js?v=20260501-3"></script>
+    <script>
+      const cartItemsEl = document.getElementById("cart-items");
+      const cartEmptyEl = document.getElementById("cart-empty");
+      const cartContentEl = document.getElementById("cart-content");
+      const subtotalEl = document.getElementById("cart-subtotal");
+      const shippingEl = document.getElementById("cart-shipping");
+      const totalEl = document.getElementById("cart-total");
+      const clearBtn = document.getElementById("cart-clear");
+
+      function renderCart() {
+        const totals = getCartTotals();
+
+        if (totals.items.length === 0) {
+          cartEmptyEl.style.display = "block";
+          cartContentEl.style.display = "none";
+          return;
+        }
+
+        cartEmptyEl.style.display = "none";
+        cartContentEl.style.display = "grid";
+
+        cartItemsEl.innerHTML = totals.items
+          .map(function (item) {
+            const sizeText = item.size ? "Talla " + item.size : "Talla unica";
+            return `
+              <div class="cart-row">
+                <div>
+                  <p><strong>${item.product.name}</strong></p>
+                  <p class="meta">${sizeText}</p>
+                  <p class="price">${formatCLP(item.subtotal)}</p>
+                </div>
+                <div class="cart-controls">
+                  <button type="button" class="btn btn-secondary" data-action="dec" data-id="${item.productId}" data-size="${item.size || ''}">-</button>
+                  <span class="cart-qty">${item.quantity}</span>
+                  <button type="button" class="btn btn-secondary" data-action="inc" data-id="${item.productId}" data-size="${item.size || ''}">+</button>
+                  <button type="button" class="btn btn-secondary" data-action="rm" data-id="${item.productId}" data-size="${item.size || ''}">Quitar</button>
+                </div>
+              </div>
+            `;
+          })
+          .join("");
+
+        subtotalEl.textContent = formatCLP(totals.subtotal);
+        shippingEl.textContent = formatCLP(totals.shipping);
+        totalEl.textContent = formatCLP(totals.total);
+      }
+
+      cartItemsEl.addEventListener("click", function (event) {
+        const target = event.target.closest("button");
+        if (!target) return;
+        const action = target.getAttribute("data-action");
+        const id = Number(target.getAttribute("data-id"));
+        const sizeAttr = target.getAttribute("data-size");
+        const size = sizeAttr === "" ? null : sizeAttr;
+
+        const cart = getCart();
+        const idx = cart.findIndex(function (i) { return i.productId === id && (i.size || null) === size; });
+        if (idx < 0) return;
+
+        if (action === "inc") {
+          updateCartQuantity(id, size, cart[idx].quantity + 1);
+        } else if (action === "dec") {
+          updateCartQuantity(id, size, cart[idx].quantity - 1);
+        } else if (action === "rm") {
+          removeFromCart(id, size);
+        }
+
+        renderCart();
+      });
+
+      clearBtn.addEventListener("click", function () {
+        clearCart();
+        renderCart();
+      });
+
+      renderCart();
+    </script>
+  </body>
+</html>

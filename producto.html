@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HB clothes | Producto</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="notice-bar">Envíos solo Santiago | Sin cambios | Segunda mano seleccionada + prendas nuevas</div>
+    <header class="navbar">
+      <div class="container nav-inner">
+        <a class="logo" href="index.html">HB clothes | Lo mejor de USA, listo para usar</a>
+        <nav class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="tienda.html">Tienda</a>
+          <a href="carrito.html">Carrito <span data-cart-count></span></a>
+          <a href="checkout.html">Checkout</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="grid" style="grid-template-columns: 1.2fr 1fr; align-items: start;">
+        <article class="card">
+          <div class="card-media detail-media">
+            <img
+              id="product-main-image"
+              class="detail-main-image"
+              src=""
+              alt="Imagen principal del producto"
+              onerror="this.style.display='none';"
+            />
+          </div>
+          <div id="thumb-grid" class="thumb-grid"></div>
+        </article>
+        <article class="panel">
+          <p id="product-category" class="meta">Categoria</p>
+          <h1 id="product-name">Nombre de producto</h1>
+          <p id="product-price" class="price">$0</p>
+          <p id="product-condition" class="meta"></p>
+          <p id="product-description" class="lead">Descripcion del producto.</p>
+          <label id="product-size-label">Talla</label>
+          <select id="product-size"></select>
+          <div class="actions">
+            <button id="add-to-cart-btn" type="button" class="btn btn-primary">Agregar al carrito</button>
+            <a class="btn btn-secondary" href="carrito.html">Ver carrito</a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-main">
+        <p>HB clothes - envíos solo en Santiago, sin cambios.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">Instagram (próximamente)</a>
+          <a href="#" aria-label="TikTok">TikTok (próximamente)</a>
+          <a href="#" aria-label="Facebook">Facebook (próximamente)</a>
+        </div>
+      </div>
+    </footer>
+    <a class="whatsapp-float" href="https://wa.me/56969004163" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <script src="config.js?v=20260501-3"></script>
+    <script src="data.js?v=20260501-3"></script>
+    <script src="cart.js?v=20260501-3"></script>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const productId = Number(params.get("id")) || 1;
+      const product = PRODUCTS.find((item) => item.id === productId) || PRODUCTS[0];
+
+      const category = document.getElementById("product-category");
+      const name = document.getElementById("product-name");
+      const price = document.getElementById("product-price");
+      const condition = document.getElementById("product-condition");
+      const description = document.getElementById("product-description");
+      const mainImage = document.getElementById("product-main-image");
+      const thumbGrid = document.getElementById("thumb-grid");
+
+      category.textContent = product.category;
+      name.textContent = product.name;
+      price.textContent = formatCLP(product.price);
+      condition.textContent = product.condition;
+      description.textContent = product.description;
+
+      const sizeLabel = document.getElementById("product-size-label");
+      const sizeSelect = document.getElementById("product-size");
+      const sizes = Array.isArray(product.sizes) ? product.sizes : [];
+
+      if (sizes.length === 0) {
+        sizeLabel.style.display = "none";
+        sizeSelect.style.display = "none";
+      } else {
+        sizeSelect.innerHTML = sizes.map((sizeOption) => `<option value="${sizeOption}">${sizeOption}</option>`).join("");
+      }
+
+      const images = product.images && product.images.length > 0 ? product.images : [];
+      const initialMainImageRaw = product.mainImage || images[0] || "";
+      const galleryImagesRaw = [...new Set([initialMainImageRaw, ...images].filter((imagePath) => Boolean(imagePath)))];
+
+      const initialMainImage = getImageUrl(initialMainImageRaw);
+      const galleryImages = galleryImagesRaw.map((imagePath) => getImageUrl(imagePath));
+
+      if (initialMainImage) {
+        mainImage.style.display = "block";
+        mainImage.src = initialMainImage;
+        mainImage.alt = product.name;
+      } else {
+        mainImage.style.display = "none";
+        mainImage.parentElement.append("Imagen principal pendiente");
+      }
+
+      if (galleryImages.length <= 1) {
+        thumbGrid.style.display = "none";
+      } else {
+        thumbGrid.style.display = "grid";
+        thumbGrid.innerHTML = galleryImages
+          .map(
+            (imagePath, index) => `
+              <button type="button" aria-label="Ver imagen ${index + 1}" onclick="document.getElementById('product-main-image').src='${imagePath}'">
+                <img src="${imagePath}" alt="${product.name} vista ${index + 1}" loading="lazy" onerror="this.style.opacity='0.35'; this.title='No se pudo cargar esta imagen';" />
+              </button>
+            `
+          )
+          .join("");
+      }
+
+      const addToCartBtn = document.getElementById("add-to-cart-btn");
+      addToCartBtn.addEventListener("click", function () {
+        const selectedSize = sizes.length === 0 ? null : sizeSelect.value;
+        addToCart(product.id, selectedSize, 1);
+      });
+    </script>
+  </body>
+</html>

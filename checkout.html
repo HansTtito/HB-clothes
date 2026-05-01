@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HB clothes | Checkout</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="notice-bar">Envíos solo Santiago | Sin cambios | Segunda mano seleccionada + prendas nuevas</div>
+    <header class="navbar">
+      <div class="container nav-inner">
+        <a class="logo" href="index.html">HB clothes | Lo mejor de USA, listo para usar</a>
+        <nav class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="tienda.html">Tienda</a>
+          <a href="carrito.html">Carrito <span data-cart-count></span></a>
+          <a class="active" href="checkout.html">Checkout</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section>
+        <h1>Checkout</h1>
+        <p class="lead">Completa tus datos y paga con Mercado Pago.</p>
+      </section>
+
+      <section id="checkout-empty" class="panel" style="display: none;">
+        <p>No hay productos en el carrito.</p>
+        <a class="btn btn-primary space-top" href="tienda.html">Ir a la tienda</a>
+      </section>
+
+      <section id="checkout-content" class="grid" style="grid-template-columns: 2fr 1fr;">
+        <form id="checkout-form" class="panel">
+          <h2>Datos de envío</h2>
+          <label>Nombre completo</label>
+          <input id="customer-name" placeholder="Ej: Juan Pérez" required />
+          <label>Email</label>
+          <input id="customer-email" type="email" placeholder="Ej: correo@dominio.cl" required />
+          <label>Teléfono</label>
+          <input id="customer-phone" placeholder="+56 9 1234 5678" required />
+          <label>Dirección (Santiago)</label>
+          <input id="customer-address" placeholder="Calle, número, comuna" required />
+          <label>Método de entrega</label>
+          <select>
+            <option>Despacho solo en Santiago</option>
+          </select>
+          <button id="pay-button" type="submit" class="btn btn-primary">Pagar con Mercado Pago</button>
+          <p id="checkout-status" class="meta space-top"></p>
+        </form>
+
+        <aside class="panel">
+          <h2>Resumen de compra</h2>
+          <div id="checkout-summary" class="space-top"></div>
+          <hr class="space-top" style="border-color: var(--border);" />
+          <p class="space-top">Subtotal: <strong id="checkout-subtotal">$0</strong></p>
+          <p>Envío: <strong id="checkout-shipping">$0</strong></p>
+          <p>Total: <strong id="checkout-total">$0</strong></p>
+          <p class="meta space-top">Política: no se realizan cambios de productos.</p>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-main">
+        <p>HB clothes - envíos solo en Santiago, sin cambios.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">Instagram (próximamente)</a>
+          <a href="#" aria-label="TikTok">TikTok (próximamente)</a>
+          <a href="#" aria-label="Facebook">Facebook (próximamente)</a>
+        </div>
+      </div>
+    </footer>
+    <a class="whatsapp-float" href="https://wa.me/56969004163" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+
+    <script src="config.js?v=20260501-3"></script>
+    <script src="data.js?v=20260501-3"></script>
+    <script src="cart.js?v=20260501-3"></script>
+    <script>
+      const summaryEl = document.getElementById("checkout-summary");
+      const subtotalEl = document.getElementById("checkout-subtotal");
+      const shippingEl = document.getElementById("checkout-shipping");
+      const totalEl = document.getElementById("checkout-total");
+      const emptyEl = document.getElementById("checkout-empty");
+      const contentEl = document.getElementById("checkout-content");
+      const formEl = document.getElementById("checkout-form");
+      const statusEl = document.getElementById("checkout-status");
+
+      function renderCheckout() {
+        const totals = getCartTotals();
+
+        if (totals.items.length === 0) {
+          emptyEl.style.display = "block";
+          contentEl.style.display = "none";
+          return;
+        }
+
+        emptyEl.style.display = "none";
+        contentEl.style.display = "grid";
+
+        summaryEl.innerHTML = totals.items
+          .map(function (item) {
+            const sizeText = item.size ? "Talla " + item.size : "Talla unica";
+            return `
+              <p>${item.product.name} (${sizeText}) x${item.quantity} - <strong>${formatCLP(item.subtotal)}</strong></p>
+            `;
+          })
+          .join("");
+
+        subtotalEl.textContent = formatCLP(totals.subtotal);
+        shippingEl.textContent = formatCLP(totals.shipping);
+        totalEl.textContent = formatCLP(totals.total);
+      }
+
+      async function payWithMercadoPago(orderPayload) {
+        if (!HB_CONFIG.apiBaseUrl) {
+          statusEl.textContent = "Backend pendiente: configura HB_CONFIG.apiBaseUrl con la URL de tu API Gateway en AWS.";
+          return;
+        }
+
+        try {
+          statusEl.textContent = "Creando preferencia de pago...";
+          const response = await fetch(HB_CONFIG.apiBaseUrl + "/create-preference", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(orderPayload)
+          });
+
+          if (!response.ok) {
+            throw new Error("No se pudo crear la preferencia (" + response.status + ")");
+          }
+
+          const data = await response.json();
+          if (data && data.init_point) {
+            window.location.href = data.init_point;
+          } else {
+            throw new Error("Respuesta inválida del backend");
+          }
+        } catch (error) {
+          statusEl.textContent = "Error: " + error.message;
+        }
+      }
+
+      formEl.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const totals = getCartTotals();
+        if (totals.items.length === 0) return;
+
+        const orderPayload = {
+          customer: {
+            name: document.getElementById("customer-name").value.trim(),
+            email: document.getElementById("customer-email").value.trim(),
+            phone: document.getElementById("customer-phone").value.trim(),
+            address: document.getElementById("customer-address").value.trim()
+          },
+          items: totals.items.map(function (item) {
+            return {
+              productId: item.productId,
+              sku: item.product.sku,
+              name: item.product.name,
+              size: item.size,
+              quantity: item.quantity,
+              unitPrice: item.product.price
+            };
+          }),
+          shipping: totals.shipping,
+          subtotal: totals.subtotal,
+          total: totals.total,
+          currency: HB_CONFIG.currency
+        };
+
+        payWithMercadoPago(orderPayload);
+      });
+
+      renderCheckout();
+    </script>
+  </body>
+</html>
