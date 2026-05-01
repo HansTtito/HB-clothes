@@ -77,7 +77,7 @@ const PRODUCTS = [
     name: "HB Bra USA",
     category: "Interior",
     condition: "Segunda mano seleccionada",
-    price: 12990,
+    price: 1000,
     description: "Prenda interior importada, revisada y en muy buen estado.",
     sizes: ["32A", "32B", "34A", "34B", "36B"],
     mainImage: "assets/products/mujer/interior/hb-int-001-frente.jpeg",
