@@ -20,26 +20,40 @@ exports.handler = async (event) => {
     const topic = payload.type || queryParams.type || queryParams.topic;
     const dataId = (payload.data && payload.data.id) || queryParams["data.id"] || queryParams.id;
 
+    console.log("webhook received", { topic, dataId, payload });
+
     if (topic !== "payment" || !dataId) {
-      return { statusCode: 200, body: JSON.stringify({ ignored: true }) };
+      return { statusCode: 200, body: JSON.stringify({ ignored: true, reason: "topic or id missing" }) };
     }
 
-    const payment = await paymentClient.get({ id: dataId });
+    let payment = null;
+    try {
+      payment = await paymentClient.get({ id: dataId });
+    } catch (mpError) {
+      console.warn("payment fetch failed", mpError && mpError.message);
+      return { statusCode: 200, body: JSON.stringify({ ignored: true, reason: "payment not found" }) };
+    }
+
     if (!payment) {
-      return { statusCode: 200, body: JSON.stringify({ ignored: true }) };
+      return { statusCode: 200, body: JSON.stringify({ ignored: true, reason: "no payment data" }) };
     }
 
     const orderId = payment.external_reference;
     if (!orderId) {
-      return { statusCode: 200, body: JSON.stringify({ ignored: true }) };
+      return { statusCode: 200, body: JSON.stringify({ ignored: true, reason: "no external_reference" }) };
     }
 
     const status = mapStatus(payment.status);
-    await updateOrderStatus(orderId, status, String(payment.id));
+    try {
+      await updateOrderStatus(orderId, status, String(payment.id));
+    } catch (dbError) {
+      console.error("dynamodb update failed", dbError);
+      return { statusCode: 200, body: JSON.stringify({ ignored: true, reason: "order not found in db" }) };
+    }
 
     return { statusCode: 200, body: JSON.stringify({ ok: true, orderId: orderId, status: status }) };
   } catch (error) {
     console.error("webhook error", error);
-    return { statusCode: 500, body: JSON.stringify({ error: error.message || "webhook error" }) };
+    return { statusCode: 200, body: JSON.stringify({ ignored: true, reason: "internal error caught" }) };
   }
 };

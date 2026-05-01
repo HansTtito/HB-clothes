@@ -5,6 +5,7 @@ const { createOrder } = require("./db");
 const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || "*";
 const FRONTEND_URL = process.env.FRONTEND_URL || "";
 const MP_ACCESS_TOKEN = process.env.MP_ACCESS_TOKEN || "";
+const WEBHOOK_URL = process.env.WEBHOOK_URL || "";
 
 const mpClient = new MercadoPagoConfig({ accessToken: MP_ACCESS_TOKEN });
 const preferenceClient = new Preference(mpClient);
@@ -79,7 +80,8 @@ exports.handler = async (event) => {
             address: payload.customer.address ? { street_name: payload.customer.address } : undefined
           }
         : undefined,
-      metadata: { orderId: orderId, brand: "HB clothes" }
+      metadata: { orderId: orderId, brand: "HB clothes" },
+      notification_url: WEBHOOK_URL || undefined
     };
 
     const preference = await preferenceClient.create({ body: preferenceBody });
