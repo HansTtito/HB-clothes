@@ -17,7 +17,7 @@ const PRODUCTS = [
     name: "HB Cargo Pants",
     category: "Pantalones",
     condition: "Segunda mano seleccionada",
-    price: 28990,
+    price: 1000,
     description: "Pantalon cargo comodo y resistente con estilo streetwear.",
     sizes: ["28", "30", "32", "34", "36"],
     mainImage: "assets/products/hombre/pantalones/hb-pan-001-frente.jpg",
