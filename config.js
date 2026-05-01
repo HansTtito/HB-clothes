@@ -1,5 +1,5 @@
 const HB_CONFIG = {
-  apiBaseUrl: "",
+  apiBaseUrl: "https://pcqeipgl3m.execute-api.us-east-1.amazonaws.com",
   cdnBaseUrl: "https://hb-clothes-assets.s3.us-east-1.amazonaws.com",
   shippingCost: 3990,
   currency: "CLP",

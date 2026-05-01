@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HB clothes | Pago aprobado</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="notice-bar">Envíos solo Santiago | Sin cambios | Segunda mano seleccionada + prendas nuevas</div>
+    <header class="navbar">
+      <div class="container nav-inner">
+        <a class="logo" href="index.html">HB clothes | Lo mejor de USA, listo para usar</a>
+        <nav class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="tienda.html">Tienda</a>
+          <a href="carrito.html">Carrito <span data-cart-count></span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="panel" style="text-align: center;">
+        <h1>Pago aprobado</h1>
+        <p class="lead">Gracias por tu compra en HB clothes.</p>
+        <p id="order-info" class="meta space-top"></p>
+        <div class="actions" style="justify-content: center;">
+          <a class="btn btn-primary" href="tienda.html">Volver a la tienda</a>
+        </div>
+      </section>
+    </main>
+
+    <a class="whatsapp-float" href="https://wa.me/56969004163" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <script src="config.js?v=20260501-3"></script>
+    <script src="data.js?v=20260501-3"></script>
+    <script src="cart.js?v=20260501-3"></script>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const orderId = params.get("orderId");
+      if (orderId) {
+        document.getElementById("order-info").textContent = "ID de pedido: " + orderId;
+      }
+      clearCart();
+    </script>
+  </body>
+</html>
