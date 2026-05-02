@@ -6,6 +6,7 @@
     <title>HB clothes | Pago en revisión</title>
     <link rel="icon" type="image/png" href="assets/brand/logo.png" />
     <link rel="stylesheet" href="styles.css" />
+    <script>(function(){try{var t=localStorage.getItem('hb-theme');document.documentElement.dataset.theme=(t==='dark'||t==='light')?t:'light';}catch(e){document.documentElement.dataset.theme='light';}})();</script>
   </head>
   <body>
     <div class="notice-bar">Envíos solo Santiago | Sin cambios | Segunda mano seleccionada + prendas nuevas</div>
@@ -16,6 +17,7 @@
           <a href="index.html">Inicio</a>
           <a href="tienda.html">Tienda</a>
           <a href="carrito.html">Carrito <span data-cart-count></span></a>
+          <button class="theme-toggle" data-theme-toggle type="button" aria-label="Cambiar tema"><span class="theme-icon-light" aria-hidden="true">🌙</span><span class="theme-icon-dark" aria-hidden="true">☀️</span></button>
         </nav>
       </div>
     </header>
@@ -50,6 +52,7 @@
     <script src="config.js?v=20260501-3"></script>
     <script src="data.js?v=20260501-3"></script>
     <script src="cart.js?v=20260501-3"></script>
+    <script src="theme.js?v=20260502-1"></script>
     <script>
       const params = new URLSearchParams(window.location.search);
       const orderId = params.get("orderId");
