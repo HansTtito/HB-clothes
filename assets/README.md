@@ -1,4 +1,4 @@
-# Assets HB clothes
+# Assets HB Clothes
 
 Estructura base para mantener ordenadas imagenes de marca y productos.
 

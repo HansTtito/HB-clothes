@@ -1,4 +1,4 @@
-# HB clothes - infraestructura AWS
+# HB Clothes - infraestructura AWS
 
 Archivos de configuracion para crear el bucket S3 que alojara las fotos de productos.
 

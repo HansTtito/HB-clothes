@@ -39,7 +39,7 @@ function buildEmailHtml(order) {
 
   return (
     "<div style='font-family:Arial,sans-serif;color:#222;max-width:600px;margin:0 auto;'>" +
-    "<h2 style='color:#000;'>Nueva venta confirmada - HB clothes</h2>" +
+    "<h2 style='color:#000;'>Nueva venta confirmada - HB Clothes</h2>" +
     "<p><strong>Order ID:</strong> " + order.orderId + "</p>" +
     "<p><strong>MP Payment ID:</strong> " + (order.mpPaymentId || "-") + "</p>" +
     "<p><strong>Estado:</strong> " + order.status + "</p>" +
@@ -60,7 +60,7 @@ function buildEmailHtml(order) {
     "<strong>Total: " + formatCLP(order.total) + "</strong>" +
     "</p>" +
     "<hr style='margin-top:32px;border:none;border-top:1px solid #eee;'>" +
-    "<p style='font-size:12px;color:#888;'>Notificación automática de HB clothes. Coordina la entrega con el cliente por WhatsApp o email.</p>" +
+    "<p style='font-size:12px;color:#888;'>Notificación automática de HB Clothes. Coordina la entrega con el cliente por WhatsApp o email.</p>" +
     "</div>"
   );
 }
@@ -73,7 +73,7 @@ function buildEmailText(order) {
   }).join("\n");
 
   return [
-    "Nueva venta confirmada - HB clothes",
+    "Nueva venta confirmada - HB Clothes",
     "",
     "Order ID: " + order.orderId,
     "MP Payment ID: " + (order.mpPaymentId || "-"),
@@ -100,7 +100,7 @@ async function sendOrderApprovedEmail(order) {
     return;
   }
 
-  const subject = "HB clothes | Nueva venta " + (order.customer && order.customer.name ? order.customer.name : "") + " - " + formatCLP(order.total);
+  const subject = "HB Clothes | Nueva venta " + (order.customer && order.customer.name ? order.customer.name : "") + " - " + formatCLP(order.total);
 
   const command = new SendEmailCommand({
     Source: FROM_EMAIL,

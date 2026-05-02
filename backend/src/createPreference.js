@@ -80,7 +80,7 @@ exports.handler = async (event) => {
             address: payload.customer.address ? { street_name: payload.customer.address } : undefined
           }
         : undefined,
-      metadata: { orderId: orderId, brand: "HB clothes" },
+      metadata: { orderId: orderId, brand: "HB Clothes" },
       notification_url: WEBHOOK_URL || undefined,
       payment_methods: {
         excluded_payment_types: [

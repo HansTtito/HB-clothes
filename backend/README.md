@@ -1,6 +1,6 @@
-# HB clothes - Backend
+# HB Clothes - Backend
 
-Backend en AWS Lambda + Mercado Pago + DynamoDB para HB clothes.
+Backend en AWS Lambda + Mercado Pago + DynamoDB para HB Clothes.
 
 ## Estructura
 

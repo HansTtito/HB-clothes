@@ -3,7 +3,7 @@ frontend:
   phases:
     build:
       commands:
-        - echo "HB clothes - sitio estatico, no requiere build"
+        - echo "HB Clothes - sitio estatico, no requiere build"
   artifacts:
     baseDirectory: /
     files:

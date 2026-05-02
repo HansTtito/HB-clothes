@@ -1,5 +1,5 @@
 @echo off
-title HB clothes - servidor local
+title HB Clothes - servidor local
 cd /d "%~dp0"
 
 where python >nul 2>nul

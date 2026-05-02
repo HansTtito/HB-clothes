@@ -1,7 +1,7 @@
 {
   "name": "hb-clothes-backend",
   "version": "1.0.0",
-  "description": "Backend HB clothes - integracion Mercado Pago + DynamoDB",
+  "description": "Backend HB Clothes - integracion Mercado Pago + DynamoDB",
   "main": "src/createPreference.js",
   "scripts": {
     "build:create": "powershell -Command \"Compress-Archive -Path src/createPreference.js,src/db.js,node_modules -DestinationPath dist/createPreference.zip -Force\"",
