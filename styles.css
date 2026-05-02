@@ -326,6 +326,41 @@ select {
   margin-top: 1rem;
 }
 
+.next-steps {
+  text-align: left;
+  background: rgba(110, 231, 183, 0.06);
+  border: 1px solid rgba(110, 231, 183, 0.25);
+  border-radius: 0.8rem;
+  padding: 1.2rem 1.4rem;
+  margin: 1.6rem auto 0;
+  max-width: 520px;
+}
+
+.next-steps h3 {
+  margin-bottom: 0.6rem;
+  color: var(--accent);
+}
+
+.steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.steps-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+}
+
+.steps-list li:last-child {
+  border-bottom: none;
+}
+
+.steps-list strong {
+  color: var(--text);
+}
+
 .whatsapp-float {
   position: fixed;
   right: 1rem;
