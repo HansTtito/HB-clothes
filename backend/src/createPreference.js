@@ -81,7 +81,15 @@ exports.handler = async (event) => {
           }
         : undefined,
       metadata: { orderId: orderId, brand: "HB clothes" },
-      notification_url: WEBHOOK_URL || undefined
+      notification_url: WEBHOOK_URL || undefined,
+      payment_methods: {
+        excluded_payment_types: [
+          { id: "ticket" },
+          { id: "atm" },
+          { id: "bank_transfer" }
+        ],
+        installments: 12
+      }
     };
 
     const preference = await preferenceClient.create({ body: preferenceBody });
