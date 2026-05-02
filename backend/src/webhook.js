@@ -1,5 +1,6 @@
 const { MercadoPagoConfig, Payment } = require("mercadopago");
-const { updateOrderStatus } = require("./db");
+const { updateOrderStatus, getOrder } = require("./db");
+const { sendOrderApprovedEmail } = require("./notify");
 
 const MP_ACCESS_TOKEN = process.env.MP_ACCESS_TOKEN || "";
 
@@ -49,6 +50,17 @@ exports.handler = async (event) => {
     } catch (dbError) {
       console.error("dynamodb update failed", dbError);
       return { statusCode: 200, body: JSON.stringify({ ignored: true, reason: "order not found in db" }) };
+    }
+
+    if (status === "approved") {
+      try {
+        const order = await getOrder(orderId);
+        if (order) {
+          await sendOrderApprovedEmail(order);
+        }
+      } catch (notifyError) {
+        console.error("notify failed", notifyError);
+      }
     }
 
     return { statusCode: 200, body: JSON.stringify({ ok: true, orderId: orderId, status: status }) };
