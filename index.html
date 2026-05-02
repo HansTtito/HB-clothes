@@ -105,7 +105,7 @@
         const grid = document.getElementById("cat-grid");
         if (!grid) return;
         grid.innerHTML = categories.map(function (cat) {
-          const primary = getImageUrl(cat.image);
+          const primary = cat.image;
           const fallbackProduct = findFallbackCover(cat.filter);
           const fallback = fallbackProduct ? getImageUrl(fallbackProduct.mainImage || (fallbackProduct.images && fallbackProduct.images[0])) : "";
           return `
