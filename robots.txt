@@ -6,4 +6,4 @@ Disallow: /success.html
 Disallow: /failure.html
 Disallow: /pending.html
 
-Sitemap: https://hbclothes.cl/sitemap.xml
+Sitemap: https://www.hbclothes.cl/sitemap.xml
