@@ -38,19 +38,19 @@ const PRODUCTS = [
     mainImage: "assets/products/unisex/poleras/hb-pol-001-frente.jpg",
     images: ["assets/products/unisex/poleras/hb-pol-001-frente.jpg", "assets/products/unisex/poleras/hb-pol-001-detalle-1.jpg"]
   },
-  {
-    id: 4,
-    sku: "hb-cha-001",
-    name: "HB Oversize Jacket",
-    category: "Chaquetas",
-    gender: "mujer",
-    condition: "Segunda mano seleccionada",
-    price: 45990,
-    description: "Chaqueta oversize importada desde USA, abrigada y versatil.",
-    sizes: ["S", "M", "L"],
-    mainImage: "assets/products/mujer/chaquetas/hb-cha-001-frente.jpg",
-    images: ["assets/products/mujer/chaquetas/hb-cha-001-frente.jpg"]
-  },
+  // {
+  //   id: 4,
+  //   sku: "hb-cha-001",
+  //   name: "HB Oversize Jacket",
+  //   category: "Chaquetas",
+  //   gender: "mujer",
+  //   condition: "Segunda mano seleccionada",
+  //   price: 45990,
+  //   description: "Chaqueta oversize importada desde USA, abrigada y versatil.",
+  //   sizes: ["S", "M", "L"],
+  //   mainImage: "assets/products/mujer/chaquetas/hb-cha-001-frente.jpg",
+  //   images: ["assets/products/mujer/chaquetas/hb-cha-001-frente.jpg"]
+  // },
   {
     id: 5,
     sku: "hb-sh-001",
@@ -77,19 +77,19 @@ const PRODUCTS = [
     mainImage: "assets/products/unisex/accesorios/hb-acc-001-frente.jpg",
     images: ["assets/products/unisex/accesorios/hb-acc-001-frente.jpg"]
   },
-  {
-    id: 7,
-    sku: "hb-int-001",
-    name: "HB Bra USA",
-    category: "Interior",
-    gender: "mujer",
-    condition: "Segunda mano seleccionada",
-    price: 1000,
-    description: "Prenda interior importada, revisada y en muy buen estado.",
-    sizes: ["32A", "32B", "34A", "34B", "36B"],
-    mainImage: "assets/products/mujer/interior/hb-int-001-frente.jpeg",
-    images: ["assets/products/mujer/interior/hb-int-001-frente.jpeg","assets/products/mujer/interior/hb-int-001-espalda.jpeg"]
-  },
+  // {
+  //   id: 7,
+  //   sku: "hb-int-001",
+  //   name: "HB Bra USA",
+  //   category: "Interior",
+  //   gender: "mujer",
+  //   condition: "Segunda mano seleccionada",
+  //   price: 1000,
+  //   description: "Prenda interior importada, revisada y en muy buen estado.",
+  //   sizes: ["32A", "32B", "34A", "34B", "36B"],
+  //   mainImage: "assets/products/mujer/interior/hb-int-001-frente.jpeg",
+  //   images: ["assets/products/mujer/interior/hb-int-001-frente.jpeg","assets/products/mujer/interior/hb-int-001-espalda.jpeg"]
+  // },
   {
     id: 8,
     sku: "hb-blu-001",
