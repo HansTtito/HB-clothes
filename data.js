@@ -89,6 +89,269 @@ const PRODUCTS = [
     sizes: ["32A", "32B", "34A", "34B", "36B"],
     mainImage: "assets/products/mujer/interior/hb-int-001-frente.jpeg",
     images: ["assets/products/mujer/interior/hb-int-001-frente.jpeg","assets/products/mujer/interior/hb-int-001-espalda.jpeg"]
+  },
+  {
+    id: 8,
+    sku: "hb-blu-001",
+    name: "Blusa Azul Corazones",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 1000,
+    description: "Blusa azul con estampado de corazones, marca Socialite. Importada desde USA. Observacion: falta un boton.",
+    sizes: ["L"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-001-frente.jpg",
+    images: ["assets/products/mujer/blusas/hb-blu-001-frente.jpg"]
+  },
+  {
+    id: 9,
+    sku: "hb-blu-002",
+    name: "Blusa Lila Estampado Hojas",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 3000,
+    description: "Blusa lila con estampado de hojas. Importada desde USA, en muy buen estado.",
+    sizes: ["XL"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-002-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-002-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-002-espalda.jpg",
+      "assets/products/mujer/blusas/hb-blu-002-detalle-1.jpg"
+    ]
+  },
+  {
+    id: 10,
+    sku: "hb-blu-003",
+    name: "Blusa Boho Anudada",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Blusa boho con detalle anudado al medio, marca Wet Seal. Importada desde USA, en muy buen estado.",
+    sizes: ["S"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-003-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-003-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-003-espalda.jpg"
+    ]
+  },
+  {
+    id: 11,
+    sku: "hb-blu-004",
+    name: "Blusa Floral Azul y Rosa",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 3000,
+    description: "Blusa floreada en tonos azul y rosa, marca Liz Claiborne. Importada desde USA, en muy buen estado.",
+    sizes: ["XL"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-004-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-004-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-004-espalda.jpg",
+      "assets/products/mujer/blusas/hb-blu-004-detalle.jpg"
+    ]
+  },
+  {
+    id: 12,
+    sku: "hb-blu-005",
+    name: "Blusa Verde Menta Encaje Espalda",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 3000,
+    description: "Blusa verde menta con detalle de encaje en la espalda, marca Candie's. Importada desde USA, en muy buen estado.",
+    sizes: ["XS"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-005-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-005-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-005-espalda.jpg",
+      "assets/products/mujer/blusas/hb-blu-005-detalle.jpg",
+      "assets/products/mujer/blusas/hb-blu-005-detalle-1.jpg"
+    ]
+  },
+  {
+    id: 13,
+    sku: "hb-blu-006",
+    name: "Blusa Multicolor Amarillo Petroleo Fucsia",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Blusa multicolor con tonos amarillos, verde petroleo y fucsia, marca Simply Vera. Importada desde USA, en muy buen estado.",
+    sizes: ["L"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-006-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-006-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-006-espalda.jpg",
+      "assets/products/mujer/blusas/hb-blu-006-detalle.jpg"
+    ]
+  },
+  {
+    id: 14,
+    sku: "hb-blu-007",
+    name: "Blusa Blanca Botones",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 1000,
+    description: "Blusa blanca con botones, marca Milano. Importada desde USA. Observacion: falta un boton en la manga.",
+    sizes: ["XL"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-007-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-007-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-007-espalda.jpg"
+    ]
+  },
+  {
+    id: 15,
+    sku: "hb-blu-008",
+    name: "Blusa Verde Limon Manga 3/4",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 3000,
+    description: "Blusa verde limon con manga 3/4. Importada desde USA, en muy buen estado.",
+    sizes: ["XL"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-008-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-008-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-008-espalda.jpg"
+    ]
+  },
+  {
+    id: 16,
+    sku: "hb-blu-011",
+    name: "Blusa Estilo Hindu",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Blusa de estilo hindu, marca Jones New York. Importada desde USA, en muy buen estado.",
+    sizes: ["S"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-011-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-011-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-011-espalda.jpg",
+      "assets/products/mujer/blusas/hb-blu-011-detalle.jpg"
+    ]
+  },
+  {
+    id: 17,
+    sku: "hb-blu-012",
+    name: "Camisa Morada",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Camisa morada elegante. Importada desde USA, en muy buen estado.",
+    sizes: ["XL"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-012-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-012-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-012-espalda.jpg"
+    ]
+  },
+  {
+    id: 18,
+    sku: "hb-blu-013",
+    name: "Blusa Blanca Estampado en el Pecho",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Blusa de polyester blanca con diseno en el pecho, marca Christie & Jill. Importada desde USA, en muy buen estado.",
+    sizes: ["M"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-013-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-013-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-013-espalda.jpg",
+      "assets/products/mujer/blusas/hb-blu-013-detalle.jpg"
+    ]
+  },
+  {
+    id: 19,
+    sku: "hb-blu-014",
+    name: "Blusa Rosa Cuello Caida",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Blusa de polyester manga corta, color rosa claro con tela caida en el cuello. Importada desde USA, en muy buen estado.",
+    sizes: ["L"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-014-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-014-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-014-espalda.jpg",
+      "assets/products/mujer/blusas/hb-blu-014-detalle.jpg"
+    ]
+  },
+  {
+    id: 20,
+    sku: "hb-blu-015",
+    name: "Blusa Geometrica Negro y Rosa",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 3000,
+    description: "Blusa con estampado geometrico de pequenos triangulos sobre fondo negro y rosa, marca JNY. Importada desde USA, en muy buen estado.",
+    sizes: ["M"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-015-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-015-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-015-espalda.jpg",
+      "assets/products/mujer/blusas/hb-blu-015-detalle.jpg"
+    ]
+  },
+  {
+    id: 21,
+    sku: "hb-blu-017",
+    name: "Blusa Camisera Morada Estampada",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Blusa camisera morada con estampado. Importada desde USA, en muy buen estado.",
+    sizes: ["M"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-017-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-017-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-017-espalda.jpg"
+    ]
+  },
+  {
+    id: 22,
+    sku: "hb-blu-018",
+    name: "Camisa Morada a Rayas",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Camisa morada a rayas. Importada desde USA, en muy buen estado.",
+    sizes: ["M"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-018-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-018-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-018-espalda.jpg"
+    ]
+  },
+  {
+    id: 23,
+    sku: "hb-blu-019",
+    name: "Camisa Playera Azul Hojas",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 3000,
+    description: "Camisa playera en tonos azulados con estampado de hojas, marca Allison Daley. Importada desde USA, en muy buen estado.",
+    sizes: ["L"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-019-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-019-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-019-espalda.jpg",
+      "assets/products/mujer/blusas/hb-blu-019-detalle.jpg"
+    ]
   }
 ];
 
