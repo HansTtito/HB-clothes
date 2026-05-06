@@ -5,10 +5,11 @@
   "main": "src/createPreference.js",
   "scripts": {
     "build:create": "powershell -Command \"Compress-Archive -Path src/createPreference.js,src/db.js,node_modules -DestinationPath dist/createPreference.zip -Force\"",
-    "build:webhook": "powershell -Command \"Compress-Archive -Path src/webhook.js,src/db.js,node_modules -DestinationPath dist/webhook.zip -Force\""
+    "build:webhook": "powershell -Command \"Compress-Archive -Path src/webhook.js,src/db.js,src/notify.js,node_modules -DestinationPath dist/webhook.zip -Force\""
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.600.0",
+    "@aws-sdk/client-ses": "^3.1043.0",
     "@aws-sdk/lib-dynamodb": "^3.600.0",
     "mercadopago": "^2.0.15"
   }
