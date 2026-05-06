@@ -7,37 +7,50 @@ const FRONTEND_URL = process.env.FRONTEND_URL || "";
 const MP_ACCESS_TOKEN = process.env.MP_ACCESS_TOKEN || "";
 const WEBHOOK_URL = process.env.WEBHOOK_URL || "";
 
+const ALLOWED_ORIGINS = ALLOWED_ORIGIN.split(",").map((o) => o.trim()).filter(Boolean);
+
 const mpClient = new MercadoPagoConfig({ accessToken: MP_ACCESS_TOKEN });
 const preferenceClient = new Preference(mpClient);
 
-const corsHeaders = {
-  "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
-  "Access-Control-Allow-Headers": "Content-Type",
-  "Access-Control-Allow-Methods": "POST,OPTIONS",
-  "Content-Type": "application/json"
-};
+function pickAllowedOrigin(event) {
+  const headers = event && event.headers ? event.headers : {};
+  const reqOrigin = headers.origin || headers.Origin || "";
+  if (ALLOWED_ORIGINS.includes("*")) return "*";
+  if (reqOrigin && ALLOWED_ORIGINS.includes(reqOrigin)) return reqOrigin;
+  return ALLOWED_ORIGINS[0] || "*";
+}
 
-function jsonResponse(statusCode, body) {
+function buildCorsHeaders(event) {
+  return {
+    "Access-Control-Allow-Origin": pickAllowedOrigin(event),
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Methods": "POST,OPTIONS",
+    "Vary": "Origin",
+    "Content-Type": "application/json"
+  };
+}
+
+function jsonResponse(event, statusCode, body) {
   return {
     statusCode,
-    headers: corsHeaders,
+    headers: buildCorsHeaders(event),
     body: JSON.stringify(body)
   };
 }
 
 exports.handler = async (event) => {
   if (event.requestContext && event.requestContext.http && event.requestContext.http.method === "OPTIONS") {
-    return jsonResponse(200, { ok: true });
+    return jsonResponse(event, 200, { ok: true });
   }
 
   if (!MP_ACCESS_TOKEN) {
-    return jsonResponse(500, { error: "MP_ACCESS_TOKEN no configurado" });
+    return jsonResponse(event, 500, { error: "MP_ACCESS_TOKEN no configurado" });
   }
 
   try {
     const payload = typeof event.body === "string" ? JSON.parse(event.body) : event.body;
     if (!payload || !Array.isArray(payload.items) || payload.items.length === 0) {
-      return jsonResponse(400, { error: "Carrito vacio o invalido" });
+      return jsonResponse(event, 400, { error: "Carrito vacio o invalido" });
     }
 
     const orderId = randomUUID();
@@ -114,7 +127,7 @@ exports.handler = async (event) => {
       updatedAt: createdAt
     });
 
-    return jsonResponse(200, {
+    return jsonResponse(event, 200, {
       orderId: orderId,
       preferenceId: preference.id,
       init_point: preference.init_point,
@@ -122,6 +135,6 @@ exports.handler = async (event) => {
     });
   } catch (error) {
     console.error("createPreference error", error);
-    return jsonResponse(500, { error: error.message || "Error creando preferencia" });
+    return jsonResponse(event, 500, { error: error.message || "Error creando preferencia" });
   }
 };
