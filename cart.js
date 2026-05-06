@@ -77,13 +77,28 @@ function getCartDetailed() {
     .filter(Boolean);
 }
 
-function getCartTotals() {
+function getShippingOption(methodId) {
+  if (typeof HB_CONFIG === "undefined" || !HB_CONFIG.shippingOptions) return null;
+  const id = methodId || HB_CONFIG.defaultShippingMethod || "home";
+  return HB_CONFIG.shippingOptions[id] || null;
+}
+
+function getCartTotals(shippingMethodId) {
   const items = getCartDetailed();
   const subtotal = items.reduce(function (sum, item) { return sum + item.subtotal; }, 0);
-  const shipping = items.length > 0 ? (typeof HB_CONFIG !== "undefined" ? HB_CONFIG.shippingCost : 0) : 0;
+  const option = getShippingOption(shippingMethodId);
+  const shipping = items.length > 0 && option ? option.cost : 0;
   const total = subtotal + shipping;
   const itemCount = items.reduce(function (sum, item) { return sum + item.quantity; }, 0);
-  return { items: items, subtotal: subtotal, shipping: shipping, total: total, itemCount: itemCount };
+  return {
+    items: items,
+    subtotal: subtotal,
+    shipping: shipping,
+    shippingMethod: option ? option.id : null,
+    shippingLabel: option ? option.label : "",
+    total: total,
+    itemCount: itemCount
+  };
 }
 
 function updateCartCount() {

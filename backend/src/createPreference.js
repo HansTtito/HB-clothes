@@ -51,10 +51,13 @@ exports.handler = async (event) => {
       currency_id: payload.currency || "CLP"
     }));
 
+    const shippingMethod = payload.shippingMethod === "metro" ? "metro" : "home";
+    const shippingLabel = payload.shippingLabel || (shippingMethod === "metro" ? "Retiro en estacion de metro" : "Despacho a domicilio (Santiago)");
+
     if (payload.shipping && payload.shipping > 0) {
       mpItems.push({
         id: "shipping",
-        title: "Envio en Santiago",
+        title: shippingLabel,
         quantity: 1,
         unit_price: Number(payload.shipping),
         currency_id: payload.currency || "CLP"
@@ -103,6 +106,8 @@ exports.handler = async (event) => {
       items: payload.items,
       subtotal: payload.subtotal,
       shipping: payload.shipping,
+      shippingMethod: shippingMethod,
+      shippingLabel: shippingLabel,
       total: payload.total,
       currency: payload.currency || "CLP",
       createdAt: createdAt,
