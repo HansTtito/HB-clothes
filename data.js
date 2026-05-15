@@ -570,6 +570,187 @@ const PRODUCTS = [
     sizes: ["Única"],
     mainImage: "assets/products/mujer/interior/hb-int-016-frente.jpg",
     images: ["assets/products/mujer/interior/hb-int-016-frente.jpg"]
+  },
+  {
+    id: 39,
+    sku: "hb-nin-001",
+    name: "Polera Niño Perezoso Verde",
+    category: "Poleras",
+    gender: "ninos",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Polera manga larga verde con estampado de perezoso y texto No Hurry No Worry. Importada desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/ninos/poleras/hb-nin-001-frente.jpg",
+    images: [
+      "assets/products/ninos/poleras/hb-nin-001-frente.jpg",
+      "assets/products/ninos/poleras/hb-nin-001-detalle.jpg"
+    ]
+  },
+  {
+    id: 40,
+    sku: "hb-nin-002",
+    name: "Polerón Niño Dinosaurios Member's Mark",
+    category: "Polerones",
+    gender: "ninos",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Polerón fleece naranja y azul con dinosaurios bordados, marca Member's Mark. Importado desde USA, en muy buen estado. Talla 8 en etiqueta.",
+    sizes: ["8"],
+    mainImage: "assets/products/ninos/polerones/hb-nin-002-frente.jpg",
+    images: [
+      "assets/products/ninos/polerones/hb-nin-002-frente.jpg",
+      "assets/products/ninos/polerones/hb-nin-002-espalda.jpg",
+      "assets/products/ninos/polerones/hb-nin-002-detalle.jpg",
+      "assets/products/ninos/polerones/hb-nin-002-detalle-1.jpg"
+    ]
+  },
+  {
+    id: 41,
+    sku: "hb-nin-003",
+    name: "Polera Niño Adidas Azul",
+    category: "Poleras",
+    gender: "ninos",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Polera corta azul con logo Adidas trefoil. Importada desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/ninos/poleras/hb-nin-003-frente.jpg",
+    images: [
+      "assets/products/ninos/poleras/hb-nin-003-frente.jpg",
+      "assets/products/ninos/poleras/hb-nin-003-espalda.jpg",
+      "assets/products/ninos/poleras/hb-nin-003-detalle.jpg"
+    ]
+  },
+  {
+    id: 42,
+    sku: "hb-nin-004",
+    name: "Polera Niño Amarilla",
+    category: "Poleras",
+    gender: "ninos",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Polera corta amarilla lisa. Importada desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/ninos/poleras/hb-nin-004-frente.jpg",
+    images: [
+      "assets/products/ninos/poleras/hb-nin-004-frente.jpg",
+      "assets/products/ninos/poleras/hb-nin-004-espalda.jpg",
+      "assets/products/ninos/poleras/hb-nin-004-detalle.jpg"
+    ]
+  },
+  {
+    id: 43,
+    sku: "hb-nin-005",
+    name: "Polerón Niño Oso Morado",
+    category: "Polerones",
+    gender: "ninos",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Polerón morado con estampado de oso polar y texto beary loved. Importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/ninos/polerones/hb-nin-005-frente.jpg",
+    images: [
+      "assets/products/ninos/polerones/hb-nin-005-frente.jpg",
+      "assets/products/ninos/polerones/hb-nin-005-espalda.jpg",
+      "assets/products/ninos/polerones/hb-nin-005-detalle.jpg",
+      "assets/products/ninos/polerones/hb-nin-005-detalle-1.jpg"
+    ]
+  },
+  {
+    id: 44,
+    sku: "hb-nin-006",
+    name: "Body Bebé Rosa Manga Larga",
+    category: "Bodies",
+    gender: "ninos",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Body bebé rosa jaspe manga larga con puños blancos. Importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/ninos/bodies/hb-nin-006-frente.jpg",
+    images: [
+      "assets/products/ninos/bodies/hb-nin-006-frente.jpg",
+      "assets/products/ninos/bodies/hb-nin-006-espalda.jpg",
+      "assets/products/ninos/bodies/hb-nin-006-detalle.jpg"
+    ]
+  },
+  {
+    id: 45,
+    sku: "hb-nin-007",
+    name: "Body Carter's Dinosaurio Azul 3M",
+    category: "Bodies",
+    gender: "ninos",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Body Carter's azul marino con dinosaurio Mighty Cute. Importado desde USA, en muy buen estado. Talla 3M en etiqueta.",
+    sizes: ["3M"],
+    mainImage: "assets/products/ninos/bodies/hb-nin-007-frente.jpg",
+    images: [
+      "assets/products/ninos/bodies/hb-nin-007-frente.jpg",
+      "assets/products/ninos/bodies/hb-nin-007-espalda.jpg"
+    ]
+  },
+  {
+    id: 46,
+    sku: "hb-nin-008",
+    name: "Polera Niña Princesas Disney",
+    category: "Poleras",
+    gender: "ninos",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Polera rosa estampada Princesas Disney con cuello y mangas turquesa. Importada desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/ninos/poleras/hb-nin-008-frente.jpg",
+    images: ["assets/products/ninos/poleras/hb-nin-008-frente.jpg"]
+  },
+  {
+    id: 47,
+    sku: "hb-nin-010",
+    name: "Pijama Bebé Lunares y Peces",
+    category: "Pijamas",
+    gender: "ninos",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Enterito pijama azul con lunares y bordado de peces, con cremallera frontal. Importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/ninos/pijamas/hb-nin-010-frente.jpg",
+    images: [
+      "assets/products/ninos/pijamas/hb-nin-010-frente.jpg",
+      "assets/products/ninos/pijamas/hb-nin-010-espalda.jpg"
+    ]
+  },
+  {
+    id: 48,
+    sku: "hb-nin-011",
+    name: "Pijama Bebé Coronas Gerber",
+    category: "Pijamas",
+    gender: "ninos",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Enterito pijama rosa con coronas doradas y texto if the crown fits, marca Gerber. Importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/ninos/pijamas/hb-nin-011-frente.jpg",
+    images: [
+      "assets/products/ninos/pijamas/hb-nin-011-frente.jpg",
+      "assets/products/ninos/pijamas/hb-nin-011-espalda.jpg",
+      "assets/products/ninos/pijamas/hb-nin-011-detalle.jpg"
+    ]
+  },
+  {
+    id: 49,
+    sku: "hb-nin-012",
+    name: "Pantalón Bebé Azul Marino",
+    category: "Pantalones",
+    gender: "ninos",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Pantalón bebé azul marino elasticado. Importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/ninos/pantalones/hb-nin-012-frente.jpg",
+    images: [
+      "assets/products/ninos/pantalones/hb-nin-012-frente.jpg",
+      "assets/products/ninos/pantalones/hb-nin-012-espalda.jpg"
+    ]
   }
 ];
 

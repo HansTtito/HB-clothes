@@ -51,6 +51,7 @@
           <a class="chip" href="tienda.html?gender=hombre" data-filter="hombre">Hombre</a>
           <a class="chip" href="tienda.html?gender=mujer" data-filter="mujer">Mujer</a>
           <a class="chip" href="tienda.html?gender=unisex" data-filter="unisex">Unisex</a>
+          <a class="chip" href="tienda.html?gender=ninos" data-filter="ninos">Niños</a>
           <a class="chip" href="tienda.html?nuevo=true" data-filter="nuevo">Nuevos</a>
         </div>
         <div id="catalog-grid" class="grid space-top"></div>
@@ -100,6 +101,11 @@
           activeFilter = "unisex";
           title = "Unisex";
           lead = "Prendas que combinan con todos.";
+        } else if (gender === "ninos") {
+          filtered = filtered.filter(function (p) { return p.gender === "ninos"; });
+          activeFilter = "ninos";
+          title = "Niños";
+          lead = "Ropa infantil importada desde USA, en muy buen estado.";
         } else if (nuevo) {
           filtered = filtered.filter(function (p) { return p.condition === "Nuevo"; });
           activeFilter = "nuevo";
