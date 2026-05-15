@@ -352,6 +352,224 @@ const PRODUCTS = [
       "assets/products/mujer/blusas/hb-blu-019-espalda.jpg",
       "assets/products/mujer/blusas/hb-blu-019-detalle.jpg"
     ]
+  },
+  {
+    id: 24,
+    sku: "hb-int-002",
+    name: "Sostén Deportivo Fila Sport Negro",
+    category: "Interior",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Sostén deportivo Fila Sport color negro, alto impacto racerback. Importado desde USA, en muy buen estado. Talla M en etiqueta.",
+    sizes: ["M"],
+    mainImage: "assets/products/mujer/interior/hb-int-002-frente.jpg",
+    images: [
+      "assets/products/mujer/interior/hb-int-002-frente.jpg",
+      "assets/products/mujer/interior/hb-int-002-detalle.jpg"
+    ]
+  },
+  {
+    id: 25,
+    sku: "hb-int-003",
+    name: "Sostén Deportivo Jockey Activewear Estampado",
+    category: "Interior",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Sostén deportivo Jockey Activewear con estampado amarillo y verde. Importado desde USA, en muy buen estado. Talla XL en etiqueta.",
+    sizes: ["XL"],
+    mainImage: "assets/products/mujer/interior/hb-int-003-frente.jpg",
+    images: [
+      "assets/products/mujer/interior/hb-int-003-frente.jpg",
+      "assets/products/mujer/interior/hb-int-003-espalda.jpg",
+      "assets/products/mujer/interior/hb-int-003-detalle.jpg",
+      "assets/products/mujer/interior/hb-int-003-detalle-1.jpg"
+    ]
+  },
+  {
+    id: 26,
+    sku: "hb-int-004",
+    name: "Sostén Deportivo All in Motion Magenta",
+    category: "Interior",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Sostén deportivo All in Motion color magenta con textura rib. Importado desde USA, en muy buen estado. Talla XL en etiqueta.",
+    sizes: ["XL"],
+    mainImage: "assets/products/mujer/interior/hb-int-004-frente.jpg",
+    images: [
+      "assets/products/mujer/interior/hb-int-004-frente.jpg",
+      "assets/products/mujer/interior/hb-int-004-espalda.jpg",
+      "assets/products/mujer/interior/hb-int-004-detalle.jpg"
+    ]
+  },
+  {
+    id: 27,
+    sku: "hb-int-005",
+    name: "Sostén Deportivo Gris Jaspeado Justice",
+    category: "Interior",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Sostén deportivo gris jaspeado marca Justice, estilo racerback. Importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/mujer/interior/hb-int-005-frente.jpg",
+    images: [
+      "assets/products/mujer/interior/hb-int-005-frente.jpg",
+      "assets/products/mujer/interior/hb-int-005-espalda.jpg",
+      "assets/products/mujer/interior/hb-int-005-detalle.jpg"
+    ]
+  },
+  {
+    id: 28,
+    sku: "hb-int-006",
+    name: "Sostén Deportivo Gris Racerback",
+    category: "Interior",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Sostén deportivo gris con espalda racerback y detalle perforado. Importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/mujer/interior/hb-int-006-frente.jpg",
+    images: ["assets/products/mujer/interior/hb-int-006-frente.jpg"]
+  },
+  {
+    id: 29,
+    sku: "hb-int-007",
+    name: "Sostén Deportivo Tie-Dye Morado Naranja",
+    category: "Interior",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Sostén deportivo tie-dye en tonos morado y naranja con tirantes cruzados en la espalda. Importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/mujer/interior/hb-int-007-frente.jpg",
+    images: ["assets/products/mujer/interior/hb-int-007-frente.jpg"]
+  },
+  {
+    id: 30,
+    sku: "hb-int-008",
+    name: "Sostén Deportivo Urban Kids Camuflaje",
+    category: "Interior",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Sostén deportivo Urban Kids estampado camuflaje. Importado desde USA, en muy buen estado. Talla M (10/12) en etiqueta.",
+    sizes: ["10/12"],
+    mainImage: "assets/products/mujer/interior/hb-int-008-frente.jpg",
+    images: [
+      "assets/products/mujer/interior/hb-int-008-frente.jpg",
+      "assets/products/mujer/interior/hb-int-008-detalle.jpg"
+    ]
+  },
+  {
+    id: 31,
+    sku: "hb-int-009",
+    name: "Sostén Deportivo Champion Negro Azul",
+    category: "Interior",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Sostén deportivo Champion negro con detalle azul estampado, espalda racerback. Importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/mujer/interior/hb-int-009-frente.jpg",
+    images: ["assets/products/mujer/interior/hb-int-009-frente.jpg"]
+  },
+  {
+    id: 32,
+    sku: "hb-int-010",
+    name: "Sostén Tie-Dye Morado Encaje No Boundaries",
+    category: "Interior",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Sostén tie-dye morado con panel de encaje en la espalda, marca No Boundaries. Importado desde USA, en muy buen estado. Talla XL en etiqueta.",
+    sizes: ["XL"],
+    mainImage: "assets/products/mujer/interior/hb-int-010-frente.jpg",
+    images: [
+      "assets/products/mujer/interior/hb-int-010-frente.jpg",
+      "assets/products/mujer/interior/hb-int-010-detalle-1.jpg",
+      "assets/products/mujer/interior/hb-int-010-detalle.jpg"
+    ]
+  },
+  {
+    id: 33,
+    sku: "hb-int-011",
+    name: "Sostén Deportivo Morado Jaspe",
+    category: "Interior",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Sostén deportivo morado jaspe con espalda racerback fruncida. Importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/mujer/interior/hb-int-011-frente.jpg",
+    images: ["assets/products/mujer/interior/hb-int-011-frente.jpg"]
+  },
+  {
+    id: 34,
+    sku: "hb-int-012",
+    name: "Sostén Deportivo Nike Dri-FIT Estampado",
+    category: "Interior",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Sostén deportivo Nike Dri-FIT con estampado azul y blanco. Importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/mujer/interior/hb-int-012-frente.jpg",
+    images: ["assets/products/mujer/interior/hb-int-012-frente.jpg"]
+  },
+  {
+    id: 35,
+    sku: "hb-int-013",
+    name: "Sostén Beige con Aro",
+    category: "Interior",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Sostén beige con aro y copas moldeadas. Importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/mujer/interior/hb-int-013-frente.jpg",
+    images: ["assets/products/mujer/interior/hb-int-013-frente.jpg"]
+  },
+  {
+    id: 36,
+    sku: "hb-int-014",
+    name: "Bralette Intime Floral Blanco Morado",
+    category: "Interior",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Bralette Intime blanco con bordado floral morado y copa fija. Importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/mujer/interior/hb-int-014-frente.jpg",
+    images: ["assets/products/mujer/interior/hb-int-014-frente.jpg"]
+  },
+  {
+    id: 37,
+    sku: "hb-int-015",
+    name: "Sostén Encaje Rosa",
+    category: "Interior",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Sostén de encaje floral en tono rosa malva. Importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/mujer/interior/hb-int-015-frente.jpg",
+    images: ["assets/products/mujer/interior/hb-int-015-frente.jpg"]
+  },
+  {
+    id: 38,
+    sku: "hb-int-016",
+    name: "Sostén Deportivo Leopardo Borde Neón",
+    category: "Interior",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Sostén deportivo estampado leopardo con borde neón amarillo-verde. Importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/mujer/interior/hb-int-016-frente.jpg",
+    images: ["assets/products/mujer/interior/hb-int-016-frente.jpg"]
   }
 ];
 
