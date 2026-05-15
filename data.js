@@ -751,6 +751,192 @@ const PRODUCTS = [
       "assets/products/ninos/pantalones/hb-nin-012-frente.jpg",
       "assets/products/ninos/pantalones/hb-nin-012-espalda.jpg"
     ]
+  },
+  {
+    id: 50,
+    sku: "hb-blu-009",
+    name: "Blusa Azul Floral Boho",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Blusa azul manga larga con estampado floral y detalles geometricos. Importada desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-009-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-009-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-009-espalda.jpg"
+    ]
+  },
+  {
+    id: 51,
+    sku: "hb-blu-010",
+    name: "Blusa Beige Forever 21",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Blusa beige manga larga marca Forever 21, corte alto-bajo. Importada desde USA, en muy buen estado. Talla S en etiqueta.",
+    sizes: ["S"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-010-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-010-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-010-espalda.jpg"
+    ]
+  },
+  {
+    id: 52,
+    sku: "hb-blu-016",
+    name: "Blusa Patchwork Notations",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 3000,
+    description: "Blusa manga corta estilo patchwork floral y geometrico, marca Notations. Importada desde USA, en muy buen estado. Talla L en etiqueta.",
+    sizes: ["L"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-016-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-016-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-016-espalda.jpg",
+      "assets/products/mujer/blusas/hb-blu-016-detalle.jpg"
+    ]
+  },
+  {
+    id: 53,
+    sku: "hb-blu-020",
+    name: "Blusa Sin Mangas Estampado Abstracto",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Blusa sin mangas con estampado abstracto azul y negro, cuello drapeado. Importada desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-020-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-020-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-020-espalda.jpg",
+      "assets/products/mujer/blusas/hb-blu-020-espalda-1.jpg",
+      "assets/products/mujer/blusas/hb-blu-020-detalle-1.jpg"
+    ]
+  },
+  {
+    id: 54,
+    sku: "hb-blu-021",
+    name: "Blusa Verde UPS & DOWNS",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Blusa verde manga corta con hombreras, marca UPS & DOWNS. Importada desde USA, en muy buen estado. Talla M en etiqueta.",
+    sizes: ["M"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-021-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-021-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-021-espalda.jpg"
+    ]
+  },
+  {
+    id: 55,
+    sku: "hb-blu-022",
+    name: "Blusa Estampado Geometrico Tribal",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Blusa manga corta con estampado geometrico tribal en tonos azul, naranja y verde. Importada desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-022-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-022-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-022-espalda.jpg"
+    ]
+  },
+  {
+    id: 56,
+    sku: "hb-blu-023",
+    name: "Blusa Roja Mangas Acampanadas Masseus",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 3000,
+    description: "Blusa roja manga acampanada marca Masseus. Importada desde USA, en muy buen estado. Talla L en etiqueta.",
+    sizes: ["L"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-023-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-023-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-023-frente-1.jpg",
+      "assets/products/mujer/blusas/hb-blu-023-frente-2.jpg",
+      "assets/products/mujer/blusas/hb-blu-023-espalda.jpg",
+      "assets/products/mujer/blusas/hb-blu-023-espalda-2.jpg",
+      "assets/products/mujer/blusas/hb-blu-023-detalle-1.jpg"
+    ]
+  },
+  {
+    id: 57,
+    sku: "hb-blu-024",
+    name: "Blusa Teal H&M con Bolsillos",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Blusa teal manga 3/4 con bolsillos delanteros, marca H&M. Importada desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-024-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-024-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-024-espalda.jpg",
+      "assets/products/mujer/blusas/hb-blu-024-detalle.jpg"
+    ]
+  },
+  {
+    id: 58,
+    sku: "hb-blu-025",
+    name: "Blusa Verde Oliva Bordada BCX",
+    category: "Blusas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Blusa sin mangas verde oliva con bordado geometrico en el cuello, marca BCX. Importada desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/mujer/blusas/hb-blu-025-frente.jpg",
+    images: [
+      "assets/products/mujer/blusas/hb-blu-025-frente.jpg",
+      "assets/products/mujer/blusas/hb-blu-025-espalda.jpg"
+    ]
+  },
+  {
+    id: 59,
+    sku: "hb-cam-001",
+    name: "Camisa Calvin Klein Cuadros Azul",
+    category: "Camisas",
+    gender: "hombre",
+    condition: "Segunda mano seleccionada",
+    price: 5000,
+    description: "Camisa manga larga cuadros micro azul y blanco, marca Calvin Klein. Importada desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/hombre/camisa/hb-cam-001-frente.jpg",
+    images: [
+      "assets/products/hombre/camisa/hb-cam-001-frente.jpg",
+      "assets/products/hombre/camisa/hb-cam-001-espalda.jpg",
+      "assets/products/hombre/camisa/hb-cam-001-detalle-1.jpg",
+      "assets/products/hombre/camisa/hb-cam-001-detalle-2.jpg"
+    ]
+  },
+  {
+    id: 60,
+    sku: "hb-int-001",
+    name: "Sostén Interior USA",
+    category: "Interior",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 2000,
+    description: "Prenda interior importada, revisada y en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/mujer/interior/hb-int-001-frente.jpeg",
+    images: [
+      "assets/products/mujer/interior/hb-int-001-frente.jpeg",
+      "assets/products/mujer/interior/hb-int-001-espalda.jpeg"
+    ]
   }
 ];
 
