@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -41,13 +41,13 @@
         </p>
 
         <div class="actions" style="justify-content: center;">
-          <a class="btn btn-primary" id="wsp-button" href="https://wa.me/56969004163?text=Hola%20HB%20Clothes%2C%20acabo%20de%20realizar%20una%20compra" target="_blank" rel="noopener noreferrer">Contactar por WhatsApp</a>
+          <a class="btn btn-primary" id="wsp-button" href="https://wa.me/56946154130?text=Hola%20HB%20Clothes%2C%20acabo%20de%20realizar%20una%20compra" target="_blank" rel="noopener noreferrer">Contactar por WhatsApp</a>
           <a class="btn btn-secondary" href="tienda.html">Volver a la tienda</a>
         </div>
       </section>
     </main>
 
-    <a class="whatsapp-float" href="https://wa.me/56969004163?text=Hola%20HB%20Clothes%2C%20acabo%20de%20realizar%20una%20compra" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <a class="whatsapp-float" href="https://wa.me/56946154130?text=Hola%20HB%20Clothes%2C%20acabo%20de%20realizar%20una%20compra" target="_blank" rel="noopener noreferrer">WhatsApp</a>
     <script src="config.js?v=20260505-1"></script>
     <script src="data.js?v=20260505-1"></script>
     <script src="cart.js?v=20260505-1"></script>
@@ -77,7 +77,7 @@
           const msg = orderId
             ? 'Hola HB Clothes, acabo de comprar (pedido ' + orderId + ') y elegi retiro en metro. Quiero coordinar estacion y horario.'
             : 'Hola HB Clothes, acabo de comprar y elegi retiro en metro. Quiero coordinar estacion y horario.';
-          wspBtn.href = 'https://wa.me/56969004163?text=' + encodeURIComponent(msg);
+          wspBtn.href = 'https://wa.me/56946154130?text=' + encodeURIComponent(msg);
           wspBtn.textContent = 'Coordinar retiro por WhatsApp';
         } else {
           stepsEl.innerHTML = ''
@@ -87,7 +87,7 @@
           const msg = orderId
             ? 'Hola HB Clothes, acabo de realizar una compra (pedido ' + orderId + ').'
             : 'Hola HB Clothes, acabo de realizar una compra.';
-          wspBtn.href = 'https://wa.me/56969004163?text=' + encodeURIComponent(msg);
+          wspBtn.href = 'https://wa.me/56946154130?text=' + encodeURIComponent(msg);
         }
 
         clearCart();
