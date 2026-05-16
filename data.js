@@ -90,19 +90,19 @@
   //   mainImage: "assets/products/mujer/interior/hb-muj-int-001-frente.jpeg",
   //   images: ["assets/products/mujer/interior/hb-muj-int-001-frente.jpeg","assets/products/mujer/interior/hb-muj-int-001-espalda.jpeg"]
   // },
-  {
-    id: 8,
-    sku: "hb-muj-blu-001",
-    name: "Blusa Azul Corazones",
-    category: "Blusas",
-    gender: "mujer",
-    condition: "Segunda mano seleccionada",
-    price: 1000,
-    description: "Blusa azul con estampado de corazones, marca Socialite. Importada desde USA. Observacion: falta un boton.",
-    sizes: ["L"],
-    mainImage: "assets/products/mujer/blusas/hb-muj-blu-001-frente.jpg",
-    images: ["assets/products/mujer/blusas/hb-muj-blu-001-frente.jpg"]
-  },
+  // {
+  //   id: 8,
+  //   sku: "hb-muj-blu-001",
+  //   name: "Blusa Azul Corazones",
+  //   category: "Blusas",
+  //   gender: "mujer",
+  //   condition: "Segunda mano seleccionada",
+  //   price: 1000,
+  //   description: "Blusa azul con estampado de corazones, marca Socialite. Importada desde USA. Observacion: falta un boton.",
+  //   sizes: ["L"],
+  //   mainImage: "assets/products/mujer/blusas/hb-muj-blu-001-frente.jpg",
+  //   images: ["assets/products/mujer/blusas/hb-muj-blu-001-frente.jpg"]
+  // },
   {
     id: 9,
     sku: "hb-muj-blu-002",
@@ -366,7 +366,9 @@
     mainImage: "assets/products/mujer/interior/hb-muj-int-002-frente.jpg",
     images: [
       "assets/products/mujer/interior/hb-muj-int-002-frente.jpg",
-      "assets/products/mujer/interior/hb-muj-int-002-detalle.jpg"
+      "assets/products/mujer/interior/hb-muj-int-002-frente-1.jpg",
+      "assets/products/mujer/interior/hb-muj-int-002-espalda-1.jpg",
+      "assets/products/mujer/interior/hb-muj-int-002-espalda-2.jpg"
     ]
   },
   {
@@ -417,8 +419,8 @@
     mainImage: "assets/products/mujer/interior/hb-muj-int-005-frente.jpg",
     images: [
       "assets/products/mujer/interior/hb-muj-int-005-frente.jpg",
-      "assets/products/mujer/interior/hb-muj-int-005-espalda.jpg",
-      "assets/products/mujer/interior/hb-muj-int-005-detalle.jpg"
+      "assets/products/mujer/interior/hb-muj-int-005-frente-1.jpg",
+      "assets/products/mujer/interior/hb-muj-int-005-espalda.jpg"
     ]
   },
   {
@@ -457,10 +459,12 @@
     price: 2000,
     description: "Sostén deportivo Urban Kids estampado camuflaje. Importado desde USA, en muy buen estado. Talla M (10/12) en etiqueta.",
     sizes: ["10/12"],
-    mainImage: "assets/products/mujer/interior/hb-muj-int-008-frente.jpg",
+    mainImage: "assets/products/mujer/interior/hb-muj-int-008-frente-1.jpg",
     images: [
-      "assets/products/mujer/interior/hb-muj-int-008-frente.jpg",
-      "assets/products/mujer/interior/hb-muj-int-008-detalle.jpg"
+      "assets/products/mujer/interior/hb-muj-int-008-frente-1.jpg",
+      "assets/products/mujer/interior/hb-muj-int-008-espalda.jpg",
+      "assets/products/mujer/interior/hb-muj-int-008-detalle-1.jpg",
+      "assets/products/mujer/interior/hb-muj-int-008-detalle-2.jpg"
     ]
   },
   {
@@ -489,7 +493,7 @@
     mainImage: "assets/products/mujer/interior/hb-muj-int-010-frente.jpg",
     images: [
       "assets/products/mujer/interior/hb-muj-int-010-frente.jpg",
-      "assets/products/mujer/interior/hb-muj-int-010-detalle-1.jpg",
+      "assets/products/mujer/interior/hb-muj-int-010-espalda.jpg",
       "assets/products/mujer/interior/hb-muj-int-010-detalle.jpg"
     ]
   },

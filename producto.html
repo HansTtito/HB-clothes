@@ -118,6 +118,16 @@
       const initialMainImage = getImageUrl(initialMainImageRaw);
       const galleryImages = galleryImagesRaw.map((imagePath) => getImageUrl(imagePath));
 
+      let currentIndex = 0;
+
+      function setActiveImage(index) {
+        currentIndex = (index + galleryImages.length) % galleryImages.length;
+        mainImage.src = galleryImages[currentIndex];
+        document.querySelectorAll(".thumb-grid button").forEach((btn, i) => {
+          btn.classList.toggle("active", i === currentIndex);
+        });
+      }
+
       if (initialMainImage) {
         mainImage.style.display = "block";
         mainImage.src = initialMainImage;
@@ -130,16 +140,45 @@
       if (galleryImages.length <= 1) {
         thumbGrid.style.display = "none";
       } else {
+        // Flechas prev / next
+        const mediaBox = mainImage.closest(".detail-media");
+        const prevBtn = document.createElement("button");
+        prevBtn.className = "gallery-arrow prev";
+        prevBtn.type = "button";
+        prevBtn.setAttribute("aria-label", "Imagen anterior");
+        prevBtn.innerHTML = "&#8249;";
+        prevBtn.addEventListener("click", () => setActiveImage(currentIndex - 1));
+
+        const nextBtn = document.createElement("button");
+        nextBtn.className = "gallery-arrow next";
+        nextBtn.type = "button";
+        nextBtn.setAttribute("aria-label", "Imagen siguiente");
+        nextBtn.innerHTML = "&#8250;";
+        nextBtn.addEventListener("click", () => setActiveImage(currentIndex + 1));
+
+        mediaBox.appendChild(prevBtn);
+        mediaBox.appendChild(nextBtn);
+
+        // Teclado ← →
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowLeft") setActiveImage(currentIndex - 1);
+          if (e.key === "ArrowRight") setActiveImage(currentIndex + 1);
+        });
+
         thumbGrid.style.display = "grid";
         thumbGrid.innerHTML = galleryImages
           .map(
             (imagePath, index) => `
-              <button type="button" aria-label="Ver imagen ${index + 1}" onclick="document.getElementById('product-main-image').src='${imagePath}'">
-                <img src="${imagePath}" alt="${product.name} vista ${index + 1}" loading="lazy" onerror="this.style.opacity='0.35'; this.title='No se pudo cargar esta imagen';" />
+              <button type="button" aria-label="Ver imagen ${index + 1}" class="${index === 0 ? "active" : ""}">
+                <img src="${imagePath}" alt="${product.name} vista ${index + 1}" loading="lazy" onerror="this.style.opacity='0.35';" />
               </button>
             `
           )
           .join("");
+
+        thumbGrid.querySelectorAll("button").forEach((btn, i) => {
+          btn.addEventListener("click", () => setActiveImage(i));
+        });
       }
 
       const addToCartBtn = document.getElementById("add-to-cart-btn");
