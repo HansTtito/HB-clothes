@@ -50,10 +50,9 @@
           <a class="chip" href="tienda.html" data-filter="all">Todos</a>
           <a class="chip" href="tienda.html?gender=hombre" data-filter="hombre">Hombre</a>
           <a class="chip" href="tienda.html?gender=mujer" data-filter="mujer">Mujer</a>
-          <a class="chip" href="tienda.html?gender=unisex" data-filter="unisex">Unisex</a>
           <a class="chip" href="tienda.html?gender=ninos" data-filter="ninos">Niños</a>
-          <a class="chip" href="tienda.html?nuevo=true" data-filter="nuevo">Nuevos</a>
         </div>
+        <div class="filter-bar subfilter-bar" id="subfilter-bar" style="display:none;"></div>
         <div id="catalog-grid" class="grid space-top"></div>
         <p id="catalog-empty" class="lead" style="display:none;">No hay productos en esta categoría aún. Vuelve pronto.</p>
       </section>
@@ -79,38 +78,48 @@
       (function () {
         const params = new URLSearchParams(window.location.search);
         const gender = params.get("gender");
-        const nuevo = params.get("nuevo") === "true";
+        const category = params.get("category");
+
+        const GENDER_LABELS = { hombre: "Hombre", mujer: "Mujer", ninos: "Niños" };
+        const GENDER_LEADS = {
+          hombre: "Prendas seleccionadas para hombre.",
+          mujer: "Prendas seleccionadas para mujer.",
+          ninos: "Ropa infantil importada desde USA, en muy buen estado."
+        };
 
         let filtered = PRODUCTS.slice();
         let activeFilter = "all";
         let title = "Catálogo";
         let lead = "Ropa de segunda mano seleccionada y algunas prendas nuevas. Envíos solo en Santiago.";
 
-        if (gender === "hombre") {
-          filtered = filtered.filter(function (p) { return p.gender === "hombre"; });
-          activeFilter = "hombre";
-          title = "Hombre";
-          lead = "Prendas seleccionadas para hombre.";
-        } else if (gender === "mujer") {
-          filtered = filtered.filter(function (p) { return p.gender === "mujer"; });
-          activeFilter = "mujer";
-          title = "Mujer";
-          lead = "Prendas seleccionadas para mujer.";
-        } else if (gender === "unisex") {
-          filtered = filtered.filter(function (p) { return p.gender === "unisex"; });
-          activeFilter = "unisex";
-          title = "Unisex";
-          lead = "Prendas que combinan con todos.";
-        } else if (gender === "ninos") {
-          filtered = filtered.filter(function (p) { return p.gender === "ninos"; });
-          activeFilter = "ninos";
-          title = "Niños";
-          lead = "Ropa infantil importada desde USA, en muy buen estado.";
-        } else if (nuevo) {
-          filtered = filtered.filter(function (p) { return p.condition === "Nuevo"; });
-          activeFilter = "nuevo";
-          title = "Nuevos";
-          lead = "Prendas nuevas, sin uso previo.";
+        if (gender && GENDER_LABELS[gender]) {
+          filtered = filtered.filter(function (p) { return p.gender === gender; });
+          activeFilter = gender;
+          title = GENDER_LABELS[gender];
+          lead = GENDER_LEADS[gender];
+        }
+
+        // Subcategorías disponibles para el género seleccionado
+        const subfilterBar = document.getElementById("subfilter-bar");
+        if (gender && GENDER_LABELS[gender]) {
+          const cats = [...new Set(
+            PRODUCTS.filter(function (p) { return p.gender === gender; })
+                    .map(function (p) { return p.category; })
+          )].sort();
+
+          subfilterBar.style.display = "flex";
+          subfilterBar.innerHTML =
+            `<a class="chip${!category ? " active" : ""}" href="tienda.html?gender=${gender}">Todo ${GENDER_LABELS[gender]}</a>` +
+            cats.map(function (cat) {
+              const active = category === cat ? " active" : "";
+              return `<a class="chip${active}" href="tienda.html?gender=${gender}&category=${encodeURIComponent(cat)}">${cat}</a>`;
+            }).join("");
+
+          if (category) {
+            filtered = filtered.filter(function (p) { return p.category === category; });
+            title = category;
+            lead = GENDER_LABELS[gender] + " · " + category;
+          }
         }
 
         document.getElementById("catalog-title").textContent = title;
