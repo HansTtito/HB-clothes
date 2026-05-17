@@ -327,6 +327,25 @@ section {
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
 }
 
+.badge-sold-out {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  pointer-events: none;
+  text-transform: uppercase;
+}
+
+.card-sold-out .card-media {
+  opacity: 0.6;
+}
+
 .card-media {
   aspect-ratio: 4 / 5;
   width: 100%;
@@ -336,6 +355,7 @@ section {
   justify-content: center;
   color: var(--muted);
   font-weight: 500;
+  position: relative;
   font-size: 0.9rem;
   overflow: hidden;
   flex-shrink: 0;

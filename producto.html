@@ -182,10 +182,17 @@
       }
 
       const addToCartBtn = document.getElementById("add-to-cart-btn");
-      addToCartBtn.addEventListener("click", function () {
-        const selectedSize = sizes.length === 0 ? null : sizeSelect.value;
-        addToCart(product.id, selectedSize, 1);
-      });
+      if (product.soldOut) {
+        addToCartBtn.textContent = "Agotado";
+        addToCartBtn.disabled = true;
+        addToCartBtn.style.opacity = "0.45";
+        addToCartBtn.style.cursor = "not-allowed";
+      } else {
+        addToCartBtn.addEventListener("click", function () {
+          const selectedSize = sizes.length === 0 ? null : sizeSelect.value;
+          addToCart(product.id, selectedSize, 1);
+        });
+      }
 
       const whatsappFloat = document.getElementById("whatsapp-float");
       if (whatsappFloat && product && product.name) {

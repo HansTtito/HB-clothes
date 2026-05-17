@@ -1018,6 +1018,7 @@
     id: 65,
     sku: "hb-muj-bat-001",
     name: "Bata Polar Menta Texturizada",
+    soldOut: true,
     category: "Bata",
     gender: "mujer",
     condition: "Segunda mano seleccionada",
@@ -1291,9 +1292,14 @@ function productCard(product) {
     ? `<img class="card-image" src="${mainImage}" alt="${product.name}" loading="lazy" onerror="this.parentElement.innerHTML='Imagen pendiente';" />`
     : "Imagen pendiente";
 
+  const soldOutBadge = product.soldOut ? `<span class="badge-sold-out">Agotado</span>` : "";
+  const addBtn = product.soldOut
+    ? `<button class="btn btn-primary" type="button" disabled style="opacity:0.45;cursor:not-allowed;">Agotado</button>`
+    : `<button class="btn btn-primary" type="button" data-add-id="${product.id}">Agregar</button>`;
+
   return `
-    <article class="card">
-      <div class="card-media">${media}</div>
+    <article class="card${product.soldOut ? " card-sold-out" : ""}">
+      <div class="card-media">${media}${soldOutBadge}</div>
       <div class="card-body">
         <p class="meta">${product.category}</p>
         <h3>${product.name}</h3>
@@ -1301,7 +1307,7 @@ function productCard(product) {
         <p class="price">${formatCLP(product.price)}</p>
         <div class="actions">
           <a class="btn btn-secondary" href="producto.html?id=${product.id}">Ver detalle</a>
-          <button class="btn btn-primary" type="button" data-add-id="${product.id}">Agregar</button>
+          ${addBtn}
         </div>
       </div>
     </article>
