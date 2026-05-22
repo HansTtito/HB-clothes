@@ -998,20 +998,20 @@
   },
   {
     id: 64,
-    sku: "hb-muj-cha-001",
+    sku: "hb-hom-cha-003",
     name: "Trench Largo Gris Oscuro",
     category: "Chaquetas",
-    gender: "mujer",
+    gender: "hombre",
     condition: "Segunda mano seleccionada",
     price: 6000,
-    description: "Trench / abrigo largo gris oscuro con botones y doble capucha. Corte elegante, importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    description: "Trench / abrigo largo gris oscuro con botones y doble capa. Corte elegante, importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
     sizes: ["Única"],
-    mainImage: "assets/products/mujer/chaquetas/hb-muj-cha-001-frente.jpg",
+    mainImage: "assets/products/hombre/chaquetas/hb-hom-cha-003-frente.jpg",
     images: [
-      "assets/products/mujer/chaquetas/hb-muj-cha-001-frente.jpg",
-      "assets/products/mujer/chaquetas/hb-muj-cha-001-frente-2.jpg",
-      "assets/products/mujer/chaquetas/hb-muj-cha-001-espalda.jpg",
-      "assets/products/mujer/chaquetas/hb-muj-cha-001-detalle.jpg"
+      "assets/products/hombre/chaquetas/hb-hom-cha-003-frente.jpg",
+      "assets/products/hombre/chaquetas/hb-hom-cha-003-frente-2.jpg",
+      "assets/products/hombre/chaquetas/hb-hom-cha-003-espalda.jpg",
+      "assets/products/hombre/chaquetas/hb-hom-cha-003-detalle.jpg"
     ]
   },
   {
@@ -1262,6 +1262,60 @@
       "assets/products/ninos/pijamas/hb-nin-pij-003-frente-2.jpg",
       "assets/products/ninos/pijamas/hb-nin-pij-003-frente-3.jpg",
       "assets/products/ninos/pijamas/hb-nin-pij-003-detalle.jpg"
+    ]
+  },
+  {
+    id: 79,
+    sku: "hb-muj-cha-002",
+    name: "Parka Larga Azul Marino Botones",
+    category: "Chaquetas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 6000,
+    description: "Parka larga azul marino con botones metálicos y cordón en cintura. Capucha, bolsillos laterales. Importada desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/mujer/chaquetas/hb-muj-cha-002-frente.jpg",
+    images: [
+      "assets/products/mujer/chaquetas/hb-muj-cha-002-frente.jpg",
+      "assets/products/mujer/chaquetas/hb-muj-cha-002-espalda.jpg",
+      "assets/products/mujer/chaquetas/hb-muj-cha-002-detalle.jpg",
+      "assets/products/mujer/chaquetas/hb-muj-cha-002-detalle-1.jpg"
+    ]
+  },
+  {
+    id: 80,
+    sku: "hb-muj-cha-003",
+    name: "Abrigo Largo Azul Petróleo Acolchado",
+    category: "Chaquetas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 6000,
+    description: "Abrigo largo azul petróleo con acolchado interior, botones metálicos y cordón en cintura. Cuello alto. Importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/mujer/chaquetas/hb-muj-cha-003-frente.jpg",
+    images: [
+      "assets/products/mujer/chaquetas/hb-muj-cha-003-frente.jpg",
+      "assets/products/mujer/chaquetas/hb-muj-cha-003-espalda.jpg",
+      "assets/products/mujer/chaquetas/hb-muj-cha-003-detalle.jpg"
+    ]
+  },
+  {
+    id: 81,
+    sku: "hb-muj-cha-004",
+    name: "Abrigo Largo Bordo Capucha Piel",
+    category: "Chaquetas",
+    gender: "mujer",
+    condition: "Segunda mano seleccionada",
+    price: 7000,
+    description: "Abrigo largo color bordo con capucha con ribete de piel, esclavina frontal y botones. Importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
+    sizes: ["Única"],
+    mainImage: "assets/products/mujer/chaquetas/hb-muj-cha-004-frente.jpg",
+    images: [
+      "assets/products/mujer/chaquetas/hb-muj-cha-004-frente.jpg",
+      "assets/products/mujer/chaquetas/hb-muj-cha-004-frente-1.jpg",
+      "assets/products/mujer/chaquetas/hb-muj-cha-004-espalda.jpg",
+      "assets/products/mujer/chaquetas/hb-muj-cha-004-espalda-1.jpg",
+      "assets/products/mujer/chaquetas/hb-muj-cha-004-espalda-2.jpg"
     ]
   }
 ];
