@@ -1272,8 +1272,8 @@
     gender: "mujer",
     condition: "Segunda mano seleccionada",
     price: 10000,
-    description: "Parka larga azul marino con botones metálicos y cordón en cintura. Capucha, bolsillos laterales. Importada desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
-    sizes: ["Única"],
+    description: "Parka larga azul marino con botones metálicos y cordón en cintura. Capucha, bolsillos laterales. Importada desde USA, en muy buen estado. Talla L en etiqueta.",
+    sizes: ["L"],
     mainImage: "assets/products/mujer/chaquetas/hb-muj-cha-002-frente.jpg",
     images: [
       "assets/products/mujer/chaquetas/hb-muj-cha-002-frente.jpg",
@@ -1285,13 +1285,13 @@
   {
     id: 80,
     sku: "hb-muj-cha-003",
-    name: "Abrigo Largo Azul Petróleo Acolchado",
+    name: "Abrigo Largo Turquesa/Celeste Acolchado",
     category: "Chaquetas",
     gender: "mujer",
     condition: "Segunda mano seleccionada",
     price: 12000,
-    description: "Abrigo largo azul petróleo con acolchado interior, botones metálicos y cordón en cintura. Cuello alto. Importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
-    sizes: ["Única"],
+    description: "Abrigo largo turquesa/celeste con acolchado interior, botones metálicos y cordón en cintura. Cuello alto. Importado desde USA, en muy buen estado. Talla L en etiqueta.",
+    sizes: ["L"],
     mainImage: "assets/products/mujer/chaquetas/hb-muj-cha-003-frente.jpg",
     images: [
       "assets/products/mujer/chaquetas/hb-muj-cha-003-frente.jpg",
