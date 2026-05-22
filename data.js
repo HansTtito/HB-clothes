@@ -1307,8 +1307,8 @@
     gender: "mujer",
     condition: "Segunda mano seleccionada",
     price: 15000,
-    description: "Abrigo largo color bordo con capucha con ribete de piel, esclavina frontal y botones. Importado desde USA, en muy buen estado. Sin etiqueta de talla visible; consultar por WhatsApp.",
-    sizes: ["Única"],
+    description: "Abrigo largo color bordo con capucha con ribete de piel, esclavina frontal y botones. Importado desde USA, en muy buen estado. Talla L (US 8) en etiqueta.",
+    sizes: ["L"],
     mainImage: "assets/products/mujer/chaquetas/hb-muj-cha-004-frente.jpg",
     images: [
       "assets/products/mujer/chaquetas/hb-muj-cha-004-frente.jpg",
