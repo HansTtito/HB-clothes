@@ -490,6 +490,26 @@ textarea:focus {
   flex-wrap: wrap;
 }
 
+.footer-dev {
+  width: 100%;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 0.8rem;
+  opacity: 0.7;
+}
+
+.footer-dev a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+}
+
+.footer-dev a:hover {
+  color: var(--text);
+  border-bottom-color: var(--text);
+}
+
 .socials {
   display: flex;
   gap: 1rem;
